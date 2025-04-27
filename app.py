@@ -49,6 +49,7 @@ def recomendar_productos(cliente_id, n=5):
                 recomendaciones.append({
                     'id': producto_id,
                     'titulo': producto_info.iloc[0]['titulo'],
+                    'slug': producto_info.iloc[0].get('slug', ''),
                     'puntuacion': round(float(scores_recomendacion[idx]), 3)
                 })
     return recomendaciones
@@ -72,7 +73,7 @@ def obtener_productos_populares(n=10):
     productos_unicos['prediccion_cantidad'] = predicciones
 
     productos_top = productos_unicos.sort_values(by='prediccion_cantidad', ascending=False).head(n)
-    resultado = productos_top[['producto_id', 'titulo']].to_dict(orient='records')
+    resultado = productos_top[['producto_id', 'titulo', 'slug']].to_dict(orient='records')
     return resultado
 
 # 4. Endpoints API

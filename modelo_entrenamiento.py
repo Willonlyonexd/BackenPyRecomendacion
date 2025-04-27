@@ -19,7 +19,7 @@ db = client['EcommerML']
 
 # 2. Extracción de datos
 ventas_detalles = list(db.ventadetalles.find({}, {'cliente': 1, 'producto': 1, 'cantidad': 1, 'precio': 1, 'createdAT': 1}))
-productos = list(db.productos.find({}, {'_id': 1, 'titulo': 1}))
+productos = list(db.productos.find({}, {'_id': 1, 'titulo': 1, 'slug': 1}))  # ⚡ Agregado 'slug'
 clientes = list(db.clientes.find({}, {'_id': 1}))
 
 df_ventas = pd.DataFrame(ventas_detalles)
@@ -71,4 +71,4 @@ modelo_data = {
 with open('modelo_recomendacion.pkl', 'wb') as f:
     pickle.dump(modelo_data, f)
 
-print("\u2705 Modelo de recomendación guardado como modelo_recomendacion.pkl")
+print("✅ Modelo de recomendación guardado como modelo_recomendacion.pkl")
