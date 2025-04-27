@@ -12,7 +12,7 @@ from scipy.sparse import csr_matrix
 # 1. Conexión a MongoDB
 ca = certifi.where()
 client = MongoClient(
-    "mongodb+srv://mariohappypro:camila@cluster0.crz8eun.mongodb.net/EcommerML?retryWrites=true&w=majority",
+    "mongodb+srv://will:will@cluster0.rmkpe.mongodb.net/EcommerML?retryWrites=true&w=majority",
     tlsCAFile=ca
 )
 db = client['EcommerML']
