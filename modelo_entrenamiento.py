@@ -72,3 +72,4 @@ with open('modelo_recomendacion.pkl', 'wb') as f:
     pickle.dump(modelo_data, f)
 
 print("✅ Modelo de recomendación guardado como modelo_recomendacion.pkl")
+#hola
